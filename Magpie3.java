@@ -49,6 +49,36 @@ public class Magpie3
 		{
 			response = getRandomResponse();
 		}
+		if (statement.indexOf("mother") >= 0
+				|| statement.indexOf("father") >= 0
+				|| statement.indexOf("sister") >= 0
+				|| statement.indexOf("brother") >= 0)
+		{
+			response = "Tell me more about your family.";
+		} else if((statement.indexOf("dog") >= 0) || (statement.indexOf("cat") >= 0)) {
+			response = "Tell me more about your pets.";
+		} else if((statement.indexOf("Mr.") >=0 & statement.indexOf("Fessenden") >=0)) {
+			response = "He is an awesome teacher!";
+		} else if((statement.indexOf("Mrs.") >=0 & ((statement.indexOf("Bushyeager") >= 0) || statement.indexOf("Arteaga") >= 0))){
+			response = "She is an amazing teacher!";
+		} 
+		String newstatement = statement.trim();
+		if(newstatement.length() == 0) {
+			response = "Say something, please.";
+		}
+		else if(statement.indexOf("school") >= 0) {
+			response = "I hate school.";
+		}
+		else if(statement.indexOf("Physics") >= 0) {
+			response = "Physics, an interesting subject.";
+		}
+		else if(statement.indexOf("Biology") >= 0) {
+			response = "Eh, that class is boring to me.";
+		}
+		else
+		{
+			response = getRandomResponse();
+		}
 		return response;
 	}
 
